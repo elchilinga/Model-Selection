@@ -1,0 +1,37 @@
+Examining the provided data and their evaluation results, 
+I noticed that there are certain groups in the video data, such as women, men և other․
+decided for a more accurate model selection, would be better to check whether the models whose result is highly relevant to individual data sets that is included in it.
+So I created 3 groups from each .log file: woman, man, other.
+For each calculated the mean, the variance and the median.
+Comparing the model of the previous release with the newly created models the above mentioned groups, convinced, that the best model for the whole data and their separate groups is the released model:
+
+whole data 
+released-model1 	released-model2		released-model3
+0.00357723		0.00431325		0.00570029
+
+woman
+
+0.00395198		0.0056441	0.00733945
+
+man
+0.00131095  		0.00112173	0.00184727
+
+others
+0.01011503		0.00749695	0.00930037
+
+
+but if we compare the 3 new models with each other, we will get the following result  (best to worse):
+for woman
+model 1, model 2, model 3
+for male:
+model 2, model 1, model 3
+for other:
+model 2, model 3, model 1
+
+Having the definition of the problem, where it is stated that the savings of CPU are significant as a result of the change of models,
+but considered that the accuracy is significantly reduced also.
+I think it wouldn't be expedient to release any of the new models in this case.
+
+However, If we are going to choose one of the new models, we can give preference to model1 as it becomes clear from the database that female users are the most compared to the others. 
+And in that case the best one is the first among the new ones.
+Or maybe, it is also possible to automatically select the model according to the user's gender: so that model 1 is selected for female users and model2 for male users.
